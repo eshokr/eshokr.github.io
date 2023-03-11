@@ -18,30 +18,13 @@
       .photo {
         width: 40%;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
+        align-items: center;
       }
       
-      /* Add some margin and padding to improve the layout */
-      body {
-        margin: 0;
-        padding: 0;
-      }
-      
-      header {
-        background-color: blue;
-        color: white;
-        text-align: center;
-        padding: 1em;
-      }
-      
-      footer {
-        background-color: blue;
-        color: white;
-        text-align: center;
-        padding: 1em;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
+      img {
+        max-width: 300px;
+        height: auto;
       }
     </style>
   </head>
@@ -49,18 +32,27 @@
     <header>
       <h1>Welcome to my website</h1>
     </header>
-    <div class="container">
-      <div class="text">
-        <h2>About me</h2>
-        <p>Hi, my name is Eslam Shokr,  I am a Ph.D. student at the University of Zurich (UZH) where I engage in cutting-edge research at the CMS experiment. My main focus is to establish a new limit for the anomalous magnetic moment of tau using lead-lead ultra-peripheral collisions. In addition, I am committed to exploring the potential of Machine Learning techniques in uncovering new physics phenomena. This exciting project combines my passion for particle physics and my interest in the latest advances in computational methods.</p>
-        <p>Drop me an email at <a href="mailto:eslam.shokr@cern.ch">eslam.shokr@cern.ch</a></p>
-      </div>
-      <div class="photo">
-        <img src="myphoto.jpg" alt="My Photo">
-      </div>
-    </div>
+    <main>
+      <section>
+        <article>
+          <h2>About me</h2>
+          <p>Hi, my name is Eslam Shokr,  I am a Ph.D. student at the University of Zurich (UZH) where I engage in cutting-edge research at the CMS experiment. My main focus is to establish a new limit for the anomalous magnetic moment of tau using lead-lead ultra-peripheral collisions. In addition, I am committed to exploring the potential of Machine Learning techniques in uncovering new physics phenomena. This exciting project combines my passion for particle physics and my interest in the latest advances in computational methods.</p>
+          <p>Drop me an email at <a href="mailto:eslam.shokr@cern.ch">eslam.shokr@cern.ch</a></p>
+        </article>
+      </section>
+      <aside>
+        <div class="container">
+          <div class="text">
+            <h3>Eslam Shokr</h3>
+          </div>
+          <div class="photo">
+            <img src="myphoto.jpg" alt="My Photo">
+          </div>
+        </div>
+      </aside>
+    </main>
     <footer>
-      &copy; 2023 Eslam Shokr
+      <!-- Add footer content if needed -->
     </footer>
   </body>
 </html>
