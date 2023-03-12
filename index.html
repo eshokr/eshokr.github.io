@@ -143,23 +143,20 @@ body, html {
    <span class="w3-xxlarge w3-text-white w3-wide">Heavy Ion Collisions </span>
   </div>
 </div>
-
 <!-- Container (Portfolio Section) -->
 <div class="w3-content w3-container w3-padding-64" id="portfolio">
   <h3 class="w3-center">Recent Activities</h3>
-  <p class="w3-center"><em>Here are some of my latest presententaions, summers or winter schools, publications, ...etc.</em></p><br>
-
-  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
-      <img src="/images/chipp.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="CHIPP winter school">
-      <p class="image-caption">This photo was taken at the CHIPP winter school, an esteemed gathering of particle physicists from around the world. The school offers a unique opportunity for researchers to exchange knowledge, collaborate on projects, and stay at the forefront of the field. The event features a diverse program of lectures, discussions, and workshops, all geared toward advancing our understanding of the fundamental building blocks of the universe.</p>
+  <p class="w3-center"><em>Here are some of my latest presentations, summer or winter schools, publications, ...etc.</em></p><br>
+  <!-- Flexbox layout for two equal columns -->
+  <div style="display:flex;">
+    <div style="flex:1;">
+      <div class="w3-row-padding w3-center">
+        <div class="w3-col m6">
+          <img src="/images/chipp.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="CHIPP winter school">
+          <p class="image-caption">This photo was taken at the CHIPP winter school, an esteemed gathering of particle physicists from around the world. The school offers a unique opportunity for researchers to exchange knowledge, collaborate on projects, and stay at the forefront of the field. The event features a diverse program of lectures, discussions, and workshops, all geared toward advancing our understanding of the fundamental building blocks of the universe.</p>
+        </div>
+      </div>
     </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
-    </div>
-  </div>
 
   <div class="w3-row-padding w3-center w3-section">
     <div class="w3-col m3">
