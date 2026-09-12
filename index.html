@@ -16,24 +16,58 @@ main{padding:24px 0}.section{padding:40px 0 48px;scroll-margin-top:100px;border-
 @media(max-width:760px){.nav{flex-wrap:wrap;gap:8px;padding:12px 0}.navlinks{width:100%;gap:17px;overflow-x:auto;padding:3px 0 7px}.navlinks a{font-size:.875rem;white-space:nowrap}.print{margin-left:auto}.hero-grid{grid-template-columns:1fr 150px;gap:25px;padding:40px 0}.portrait{width:150px;height:190px}.section-head,.entry{grid-template-columns:1fr;gap:8px}.research-grid{grid-template-columns:1fr;gap:24px}.skills{grid-template-columns:1fr;gap:24px}.talks{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.section{scroll-margin-top:140px}.kicker{padding:0}}
 @media(max-width:480px){.wrap{width:calc(100% - 36px)}.hero-grid{grid-template-columns:1fr;gap:24px}.portrait-wrap{grid-row:1}.portrait{width:110px;height:135px}.caption{display:none}.hero h1{font-size:2.8rem}.hero-grid{padding:28px 0 36px}.quicklinks{gap:16px}.navlinks{gap:16px}.print{font-size:.8rem;padding:8px}.section{padding:30px 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-@media print{@page{margin:16mm}.topbar,.skip,.quicklinks,.caption{display:none}.wrap{width:100%}.hero{background:#fff}.hero-grid{grid-template-columns:1fr 100px;padding:12px 0 22px;gap:24px}.hero h1{font-size:28pt}.portrait{width:100px;height:120px}.role{font-size:12pt}body{font-size:10pt}.section{padding:20px 0}.section h2,.contact h2{font-size:18pt}.section-head,.entry{grid-template-columns:120px 1fr;gap:18px}.research-grid{grid-template-columns:1fr}.card,.entry,.pub,.talk,.skill{break-inside:avoid}.card p,.entry p{font-size:10pt}.contact{display:block}.socials{margin-top:10px}.talks{grid-template-columns:1fr}.skills{grid-template-columns:repeat(3,1fr)}.hero h1,.section h2{break-after:avoid}}
+
 .conference-link{display:inline-block;min-height:44px;padding:10px 0;color:var(--teal);font-weight:600;text-decoration:underline}
+
+@media print{
+@page{size:A4;margin:12mm 14mm}
+body{font-size:9pt;line-height:1.35;color:#172c40}
+.topbar,.skip,.portrait-wrap,.contact,footer,.card-num,.kicker,.intro{display:none}
+.wrap{width:100%}main{padding:0}.hero{background:#fff}
+.hero-grid{display:block;padding:0 0 10px}.eyebrow{font-size:8pt}
+.hero h1{font-size:26pt;margin:4px 0}.role{font-size:11pt;margin:0 0 6px}
+.lede{font-size:9pt;line-height:1.4;max-width:none}
+.quicklinks{display:flex;gap:16px;margin-top:7px}.btn{font-size:9pt}
+.section{padding:10px 0;scroll-margin-top:0}
+.section-head{display:block;margin-bottom:7px}
+.section h2{font-size:14pt;break-after:avoid}
+.skills{grid-template-columns:1fr 1.4fr 1fr;gap:16px}
+.skill h3,.card h3,.entry h3,.talk h3{font-size:9.5pt;line-height:1.35;margin:0 0 3px}
+.skill p,.card p,.entry p,.talk p{font-size:9pt;line-height:1.35}
+.research-grid{grid-template-columns:repeat(3,1fr);gap:16px}.card{padding-top:6px}
+.entry{grid-template-columns:104px 1fr;gap:14px;padding:5px 0}
+.date,.talk time{font-size:8.5pt}.place{margin-bottom:3px}
+#education{break-before:page}#education .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}#education .entry{display:block}#education .date{margin-bottom:4px}
+.pub{padding:5px 0}.pub a{font-size:8.5pt}
+.talks{grid-template-columns:1fr 1fr;gap:0 20px}.talk{padding:5px 0}
+.conference-link{min-height:0;padding:0;font-size:8.5pt}
+#supervision .entry p+p{margin-top:5px!important}
+.card,.entry,.pub,.talk,.skill{break-inside:avoid}
+a{text-decoration:underline}
+}
 </style>
 </head>
 <body>
   <a class="skip" href="#content">Skip to content</a>
-  <header class="topbar"><nav class="nav wrap" aria-label="Main navigation"><a class="brand" href="#top">Eslam Shokr</a><div class="navlinks"><a href="#research">Research</a><a href="#experience">Experience</a><a href="#publications">Publications</a><a href="#talks">Talks</a><button class="print" type="button" onclick="window.print()">Print / Save PDF</button></div></nav></header>
-  <section class="hero" id="top"><div class="hero-grid wrap"><div><div class="eyebrow">University of Zurich · CMS Collaboration</div><h1>Eslam Shokr</h1><p class="role">Doctoral Researcher in Experimental Particle Physics</p><p class="lede">Doctoral researcher at the University of Zurich, working at the intersection of precision Standard Model measurements, searches for new physics, and silicon detector development.</p><div class="quicklinks"><a class="btn primary" href="mailto:eslam.shokr@cern.ch">eslam.shokr@cern.ch</a><a class="btn secondary" href="https://www.linkedin.com/in/eshokr">LinkedIn</a><a class="btn secondary" href="https://github.com/eshokr">GitHub</a></div></div><div class="portrait-wrap"><img class="portrait" src="photo.jpg?v=8eb98dd" alt="Portrait of Eslam Shokr"><p class="caption">Zurich, Switzerland</p></div></div></section>
+  <header class="topbar"><nav class="nav wrap" aria-label="Main navigation"><a class="brand" href="#top">Eslam Shokr</a><div class="navlinks"><a href="#skills">Skills</a><a href="#research">Research</a><a href="#experience">Experience</a><a href="#publications">Publications</a><a href="#talks">Talks</a><button class="print" type="button" onclick="window.print()">Print / Save PDF</button></div></nav></header>
+  <section class="hero" id="top"><div class="hero-grid wrap"><div><div class="eyebrow">University of Zurich · CMS Collaboration</div><h1>Eslam Shokr</h1><p class="role">Doctoral Researcher in Experimental Particle Physics</p><p class="lede">Experimental particle physicist in the CMS Collaboration, with experience leading precision measurements and new-physics searches, developing silicon-detector calibration tools, and supervising student research. Combines statistical analysis and programming with detector testing and the development of experimental projects from theoretical proposals.</p><div class="quicklinks"><a class="btn primary" href="mailto:eslam.shokr@cern.ch">eslam.shokr@cern.ch</a><a class="btn secondary" href="https://www.linkedin.com/in/eshokr">LinkedIn</a><a class="btn secondary" href="https://github.com/eshokr">GitHub</a></div></div><div class="portrait-wrap"><img class="portrait" src="photo.jpg?v=8eb98dd" alt="Portrait of Eslam Shokr"><p class="caption">Zurich, Switzerland</p></div></div></section>
   <main class="wrap" id="content">
-    <section class="section" id="research"><div class="section-head"><div class="kicker">Current focus</div><div><h2>Research interests</h2><p class="intro">My work combines precision measurements, model-agnostic searches, and hands-on detector development within the CMS experiment.</p></div></div><div class="research-grid">
+    <section class="section" id="skills"><div class="section-head"><div class="kicker">Toolkit</div><div><h2>Key skills</h2></div></div><div class="skills">
+      <div class="skill"><h3>Programming</h3><p>Python, C++, Bash, CMake, Linux</p></div><div class="skill"><h3>Analysis &amp; simulation</h3><p>ROOT, CMSSW, Combine, PYTHIA, HERWIG, UPCgen, STARlight, Geant4</p></div><div class="skill"><h3>Languages</h3><p>Arabic (native), English, German (A1)</p></div>
+    </div></section>
+    <section class="section" id="research"><div class="section-head"><div class="kicker">Current focus</div><div><h2>Research contributions</h2><p class="intro">My work combines precision measurements, model-agnostic searches, and hands-on detector development within the CMS experiment.</p></div></div><div class="research-grid">
       <article class="card"><div class="card-num">01</div><h3>Tau precision physics</h3><p>Leading analysis of tau anomalous magnetic moment and γγ → ττ cross-section measurements in ultraperipheral Pb–Pb collisions. The analysis is approved as CMS PAS HIN-24-011.</p></article>
       <article class="card"><div class="card-num">02</div><h3>BSM resonance searches</h3><p>Lead analyzer for a model-agnostic search for tri-resonant X → YY′ → bbWW decays, using combined CMS Run 2 and Run 3 data and a three-dimensional likelihood fit.</p></article>
       <article class="card"><div class="card-num">03</div><h3>Phase-II detector R&amp;D</h3><p>Developing and testing the Tracker Endcap Pixel detector for High-Luminosity CMS, including an eight-module calibration framework and silicon-sensor characterization.</p></article>
     </div></section>
-    <section class="section" id="experience"><div class="section-head"><div class="kicker">Career</div><div><h2>Experience &amp; education</h2></div></div><div class="timeline">
-      <article class="entry"><div class="date">Sep 2022 — Present</div><div><h3>PhD in Experimental Particle Physics · ongoing</h3><div class="place">University of Zurich · Zurich, Switzerland</div><p>Doctoral researcher in the Zurich CMS group under Prof. Dr. Ben Kilminster. Teaching assistant for undergraduate physics and laboratory courses.</p><span class="tag">CMS</span><span class="tag">Precision physics</span><span class="tag">BSM</span></div></article>
+    <section class="section" id="experience"><div class="section-head"><div class="kicker">Career</div><div><h2>Relevant experience</h2></div></div><div class="timeline">
+      <article class="entry"><div class="date">Sep 2022 — Present</div><div><h3>Doctoral Researcher</h3><div class="place">University of Zurich · Zurich, Switzerland</div><p>Doctoral researcher in the Zurich CMS group under Prof. Dr. Ben Kilminster. Teaching assistant for undergraduate physics and laboratory courses.</p></div></article>
       <article class="entry"><div class="date">Jun 2021 — Present</div><div><h3>Assistant Lecturer · on study leave</h3><div class="place">Mansoura University · Egypt</div><p>Academic appointment in the Physics Department, Faculty of Science.</p></div></article>
       <article class="entry"><div class="date">Feb — Jul 2022</div><div><h3>Erasmus+ Research Fellowship</h3><div class="place">Sapienza University of Rome · Italy</div><p>Training in the CMS group, with graduate coursework in particle physics, detectors and accelerators, and advanced machine learning for physics.</p></div></article>
+      <article class="entry"><div class="date">Dec 2016 — May 2021</div><div><h3>Teaching Assistant</h3><div class="place">Mansoura University · Egypt</div><p>Tutored undergraduate laboratory sessions in properties of matter, electricity and magnetism, electronics, and optics.</p></div></article>
+    </div></section>
+    <section class="section" id="education"><div class="section-head"><div class="kicker">Qualifications</div><div><h2>Education &amp; scholarship</h2></div></div><div class="timeline">
+      <article class="entry"><div class="date">Sep 2022 — Present</div><div><h3>PhD, Experimental Particle Physics · ongoing</h3><div class="place">University of Zurich · Switzerland</div><p>Supervisor: Prof. Dr. Ben Kilminster. Swiss Government Excellence Scholarship, Sep 2022 — Sep 2025.</p></div></article>
       <article class="entry"><div class="date">May 2018 — Apr 2021</div><div><h3>MSc, Particle Physics</h3><div class="place">Mansoura University · Egypt</div><p>Thesis on charged-particle production in proton–proton collisions in the CMS experiment at the LHC.</p></div></article>
       <article class="entry"><div class="date">Sep 2012 — Jul 2016</div><div><h3>BSc, Physics</h3><div class="place">Mansoura University · Egypt</div><p>Graduated first in the program with excellent honors (85.2%).</p></div></article>
     </div></section>
@@ -52,9 +86,6 @@ main{padding:24px 0}.section{padding:40px 0 48px;scroll-margin-top:100px;border-
       <article class="talk"><time>18 Aug 2025</time><h3><a target="_blank" rel="noopener noreferrer" href="https://oepg-sps-meetingvienna2025.univie.ac.at/">Exclusive dimuon photoproduction in ultraperipheral Pb–Pb collisions</a></h3><p>Joint Annual Meeting of ÖPG and SPS · Vienna · Conference page</p><p><a class="conference-link" href="https://oepg-sps-meetingvienna2025.univie.ac.at/" target="_blank" rel="noopener noreferrer">Visit conference page ↗</a></p></article>
       <article class="talk"><time>6 Apr 2025</time><h3><a target="_blank" rel="noopener noreferrer" href="https://indico.cern.ch/event/1334113/">Measurement of the tau g−2 factor in ultraperipheral Pb–Pb collisions</a></h3><p>Poster · Quark Matter 2025 · Frankfurt · Conference page</p><p><a class="conference-link" href="https://indico.cern.ch/event/1334113/" target="_blank" rel="noopener noreferrer">Visit conference page ↗</a></p></article>
       <article class="talk"><time>18 Nov 2024</time><h3><a target="_blank" rel="noopener noreferrer" href="https://indico.cern.ch/event/1474681/contributions/6219636/">Measurement of the tau g−2 factor with CMS</a></h3><p>LHC students poster session · LHCC · CERN · Poster details</p><p><a class="conference-link" href="https://indico.cern.ch/event/1474681/contributions/6219636/" target="_blank" rel="noopener noreferrer">View poster details ↗</a></p></article>
-    </div></section>
-    <section class="section"><div class="section-head"><div class="kicker">Toolkit</div><div><h2>Technical skills</h2></div></div><div class="skills">
-      <div class="skill"><h3>Programming</h3><p>Python, C++, Bash, CMake, Linux</p></div><div class="skill"><h3>Physics &amp; analysis</h3><p>ROOT, CMSSW, Combine, PYTHIA, HERWIG, UPCgen, STARlight, Geant4</p></div><div class="skill"><h3>Languages</h3><p>Arabic (native), English, German (A1)</p></div>
     </div></section>
     <section class="contact"><div><h2>Contact</h2><p>Based at the Physics Department, University of Zurich.</p></div><div class="socials"><a href="mailto:eslam.shokr@cern.ch">Email</a><a href="https://www.linkedin.com/in/eshokr">LinkedIn</a><a href="https://github.com/eshokr">GitHub</a></div></section>
   </main>
