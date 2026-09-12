@@ -57,12 +57,32 @@ body{font-size:9pt;line-height:1.35;color:#172c40}
 a{text-decoration:underline}
 .section{padding:7px 0}.pub{padding:4px 0}.talk p:has(.conference-link){display:none}.reference{padding-top:5px}.references-grid{gap:16px}.reference h3,.reference p,.reference a{font-size:8.5pt;line-height:1.3;margin-bottom:3px}
 }
+
+/* CMS event display introduction */
+@media screen{
+.hero{background:#050b12;color:#f1f5fa;border-bottom:1px solid #203344}
+.hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:44px;padding:52px 0}
+.hero .eyebrow{color:#78cbd7;font-size:.8rem;letter-spacing:.075em}
+.hero h1{font-size:clamp(2.6rem,4.8vw,4rem)}
+.hero .lede{color:#bbc8d6}
+.hero .btn{color:#e2f4fa}
+.hero .quicklinks{gap:12px 22px}
+.intro-portrait{display:flex;align-items:center;gap:16px;margin-bottom:24px;color:#a9bacb;font-size:.875rem}
+.intro-portrait img{width:72px;height:86px;object-fit:cover;object-position:center top;border-radius:4px}
+.collision-display{min-width:0;margin:0;background:#000;border:1px solid #1d2b39;border-radius:6px;overflow:hidden}
+.collision-display a{display:block}
+.collision-display img{display:block;width:100%;height:auto}
+.collision-display figcaption{display:flex;justify-content:space-between;gap:12px;padding:13px 18px;background:#0c1520;border-top:1px solid #1d2b39;color:#b9cad8;font-size:.875rem}
+.collision-display figcaption span{color:#849bac}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:30px;padding:36px 0}.hero .lede{max-width:680px}.collision-display{width:100%;max-width:680px}.intro-portrait{margin-bottom:20px}}
+}
+@media print{.collision-display,.intro-portrait{display:none}}
 </style>
 </head>
 <body>
   <a class="skip" href="#content">Skip to content</a>
   <header class="topbar"><nav class="nav wrap" aria-label="Main navigation"><a class="brand" href="#top">Eslam Shokr</a><div class="navlinks"><a href="#skills">Skills</a><a href="#research">Research</a><a href="#experience">Experience</a><a href="#publications">Publications</a><a href="#talks">Talks</a><button class="print" type="button" onclick="window.print()">Print / Save PDF</button></div></nav></header>
-  <section class="hero" id="top"><div class="hero-grid wrap"><div><div class="eyebrow">University of Zurich · CMS Collaboration</div><h1>Eslam Shokr</h1><p class="role">Doctoral Researcher in Experimental Particle Physics</p><p class="lede">Experimental particle physicist in the CMS Collaboration, with experience leading precision measurements and new-physics searches, developing silicon-detector calibration tools, and supervising student research.</p><div class="quicklinks"><a class="btn primary" href="mailto:eslam.shokr@cern.ch">eslam.shokr@cern.ch</a><a class="btn secondary" href="https://www.linkedin.com/in/eshokr">LinkedIn</a><a class="btn secondary" href="https://github.com/eshokr">GitHub</a></div></div><div class="portrait-wrap"><img class="portrait" src="photo.jpg?v=8eb98dd" alt="Portrait of Eslam Shokr"><p class="caption">Zurich, Switzerland</p></div></div></section>
+  <section class="hero" id="top"><div class="hero-grid wrap"><div><div class="intro-portrait"><img src="photo.jpg?v=8eb98dd" width="72" height="86" alt="Portrait of Eslam Shokr"><span>Zurich, Switzerland</span></div><div class="eyebrow">University of Zurich · CMS Collaboration</div><h1>Eslam Shokr</h1><p class="role">Doctoral Researcher in Experimental Particle Physics</p><p class="lede">Experimental particle physicist in the CMS Collaboration, with experience leading precision measurements and new-physics searches, developing silicon-detector calibration tools, and supervising student research.</p><div class="quicklinks"><a class="btn primary" href="mailto:eslam.shokr@cern.ch">eslam.shokr@cern.ch</a><a class="btn secondary" href="https://www.linkedin.com/in/eshokr">LinkedIn</a><a class="btn secondary" href="https://github.com/eshokr">GitHub</a></div></div><figure class="collision-display"><a href="assets/cms-event-display.svg" target="_blank" rel="noopener noreferrer" aria-label="View full-size CMS event display"><img src="assets/cms-event-display.svg" width="1440" height="781" alt="CMS collision event display showing particle tracks through the detector, recorded on 6 December 2015." fetchpriority="high"></a><figcaption>CMS event display <span>LHC · CERN</span></figcaption></figure></div></section>
   <main class="wrap" id="content">
     <section class="section" id="skills"><div class="section-head"><div class="kicker">Toolkit</div><div><h2>Key skills</h2></div></div><div class="skills">
       <div class="skill"><h3>Programming</h3><p>Python, C++, Bash, CMake, Linux</p></div><div class="skill"><h3>Analysis &amp; simulation</h3><p>ROOT, CMSSW, Combine, PYTHIA, HERWIG, UPCgen, STARlight, Geant4</p></div><div class="skill"><h3>Languages</h3><p>Arabic (native), English, German (A1)</p></div>
