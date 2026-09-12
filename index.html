@@ -1,247 +1,58 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>EslamShokr WebSite</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-  height: 100%;
-  color: #777;
-  line-height: 1.8;
-}
-
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* First image (Logo. Full height) */
-.bgimg-1 {
-  background-image: url('/images/background.jpg');
-  min-height: 100%
-}
-
-/* Second image (Portfolio) */
-.bgimg-2 {
-  background-image: url("/images/hi.jpg");
-  min-height: 400px;
-}
-
-/* Third image (Contact) */
-.bgimg-3 {
-  background-image: url("/images/touch.jpg");
-  min-height: 400px;
-}
-
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-    min-height: 400px;
-  }
-}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Eslam Shokr — doctoral researcher in experimental particle physics at the University of Zurich and member of the CMS Collaboration.">
+  <meta name="theme-color" content="#081b2c">
+  <title>Eslam Shokr · Experimental Particle Physicist</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23081b2c'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%235bd6c5' stroke-width='3'/%3E%3Cpath d='M18 32h28M32 18c8 8 8 20 0 28M32 18c-8 8-8 20 0 28' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Ccircle cx='45' cy='23' r='4' fill='%23f7b267'/%3E%3C/svg%3E">
+  <style>
+:root{--ink:#172c40;--muted:#526477;--navy:#122c45;--teal:#166e77;--teal-soft:#eaf2f3;--paper:#fff;--line:#dce3e9}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;color:var(--ink);background:#fff;font:400 1rem/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}a{color:inherit;text-underline-offset:4px}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible{outline:3px solid #be792f;outline-offset:5px}.wrap{width:min(1080px,calc(100% - 48px));margin:auto}.skip{position:absolute;top:-70px;left:15px;z-index:30;background:white;padding:12px}.skip:focus{top:10px}
+.topbar{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font:600 1.15rem Georgia,serif;text-decoration:none;white-space:nowrap}.navlinks{display:flex;align-items:center;gap:24px}.navlinks a{font-size:.9rem;text-decoration:none;color:var(--muted);padding:8px 0}.navlinks a:hover{color:var(--ink)}.print{background:var(--navy);color:#fff;border:1px solid var(--navy);padding:10px 16px;border-radius:3px;font:600 .875rem/1.4 inherit;white-space:nowrap;cursor:pointer}.print:hover{background:#234d70}
+.hero{background:#f4f7fa;border-bottom:1px solid var(--line)}.hero-grid{display:grid;grid-template-columns:1fr 210px;gap:72px;align-items:center;padding:65px 0}.eyebrow,.kicker{color:var(--teal);font-size:.875rem;letter-spacing:.09em;text-transform:uppercase;font-weight:600}.hero h1{font:400 clamp(2.8rem,6vw,4.5rem)/1.15 Georgia,serif;letter-spacing:-.035em;margin:12px 0 8px}.role{font-size:1.2rem;margin:0 0 14px;font-weight:500}.lede{font-size:1rem;line-height:1.8;color:var(--muted);max-width:650px;margin:0}.portrait{display:block;width:210px;height:250px;object-fit:cover;object-position:center top;border-radius:3px}.quicklinks{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px}.btn{font-size:.9rem;color:var(--navy);font-weight:600;text-decoration:underline}.portrait-wrap{margin:0}.caption{font-size:.8rem;color:var(--muted);margin:9px 0 0}
+main{padding:24px 0}.section{padding:40px 0 48px;scroll-margin-top:100px;border-bottom:1px solid var(--line)}.section-head{display:grid;grid-template-columns:180px 1fr;gap:36px;margin-bottom:28px}.kicker{padding-top:7px}.section h2,.contact h2{font:400 clamp(1.8rem,3vw,2.3rem)/1.25 Georgia,serif;letter-spacing:-.02em;margin:0}.intro{margin:12px 0 0;color:var(--muted);max-width:720px}.research-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}.card{border-top:2px solid var(--teal);padding:20px 0 0}.card-num{color:var(--muted);font-size:.8rem;margin-bottom:12px}.card h3,.entry h3{font-size:1.08rem;line-height:1.5;font-weight:600;margin:0 0 10px}.card p,.entry p{font-size:1rem;color:var(--muted);margin:0}.entry{display:grid;grid-template-columns:180px 1fr;gap:36px;padding:23px 0;border-top:1px solid var(--line)}.date{font-size:.9rem;color:var(--muted);font-variant-numeric:tabular-nums}.place{font-weight:500;margin:0 0 7px}.tag{display:inline-block;margin:10px 6px 0 0;padding:2px 9px;background:var(--teal-soft);color:var(--teal);font-size:.8rem;border-radius:2px}.pubs{display:grid;gap:0}.pub{padding:23px 0;border-top:1px solid var(--line)}.pub h3{font-size:1.1rem;line-height:1.6;margin:0 0 5px;font-weight:600}.pub p{margin:4px 0;color:var(--muted)}.pub a{font-size:.9rem;color:var(--teal);font-weight:600}.talks{display:grid;grid-template-columns:1fr 1fr;gap:0 35px}.talk{border-top:1px solid var(--line);padding:22px 0}.talk time{font-size:.875rem;color:var(--muted)}.talk h3{font-size:1rem;margin:5px 0;font-weight:600}.talk h3 a{text-decoration:none}.talk h3 a:hover{text-decoration:underline}.talk p{font-size:.9rem;color:var(--muted);margin:0}.skills{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:32px}.skill h3{font-size:1rem;margin:0 0 8px}.skill p{color:var(--muted);margin:0}.contact{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;padding:42px 0}.contact p{color:var(--muted);margin:12px 0 0}.socials{display:flex;flex-wrap:wrap;gap:20px}.socials a{font-size:.9rem;color:var(--teal);font-weight:600}footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--muted);font-size:.8rem}
+@media(max-width:760px){.nav{flex-wrap:wrap;gap:8px;padding:12px 0}.navlinks{width:100%;gap:17px;overflow-x:auto;padding:3px 0 7px}.navlinks a{font-size:.875rem;white-space:nowrap}.print{margin-left:auto}.hero-grid{grid-template-columns:1fr 150px;gap:25px;padding:40px 0}.portrait{width:150px;height:190px}.section-head,.entry{grid-template-columns:1fr;gap:8px}.research-grid{grid-template-columns:1fr;gap:24px}.skills{grid-template-columns:1fr;gap:24px}.talks{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.section{scroll-margin-top:140px}.kicker{padding:0}}
+@media(max-width:480px){.wrap{width:calc(100% - 36px)}.hero-grid{grid-template-columns:1fr;gap:24px}.portrait-wrap{grid-row:1}.portrait{width:110px;height:135px}.caption{display:none}.hero h1{font-size:2.8rem}.hero-grid{padding:28px 0 36px}.quicklinks{gap:16px}.navlinks{gap:16px}.print{font-size:.8rem;padding:8px}.section{padding:30px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{@page{margin:16mm}.topbar,.skip,.quicklinks,.caption{display:none}.wrap{width:100%}.hero{background:#fff}.hero-grid{grid-template-columns:1fr 100px;padding:12px 0 22px;gap:24px}.hero h1{font-size:28pt}.portrait{width:100px;height:120px}.role{font-size:12pt}body{font-size:10pt}.section{padding:20px 0}.section h2,.contact h2{font-size:18pt}.section-head,.entry{grid-template-columns:120px 1fr;gap:18px}.research-grid{grid-template-columns:1fr}.card,.entry,.pub,.talk,.skill{break-inside:avoid}.card p,.entry p{font-size:10pt}.contact{display:block}.socials{margin-top:10px}.talks{grid-template-columns:1fr}.skills{grid-template-columns:repeat(3,1fr)}.hero h1,.section h2{break-after:avoid}}
 </style>
 </head>
 <body>
-
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#Schools" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Schools</a>
-    <a href="#Publications" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Publications</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
-      <i class="fa fa-search"></i>
-    </a>
-  </div>
-
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#Schools" class="w3-bar-item w3-button" onclick="toggleFunction()">Schools</a>
-    <a href="#Publications" class="w3-bar-item w3-button" onclick="toggleFunction()">Publications</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
-  </div>
-</div>
-
-<!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-   <!--  <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">MY <span class="w3-hide-small">WEBSITE</span> LOGO</span>-->
-  </div>
-</div>
-
-<!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center"><em>I am a particle physicist 😊</em></p>
-  <p>As an active researcher in the field of particle physics, I have decided to create a website to showcase my work and share my insights with others. On this website, you will find information about my ongoing research projects, publications, and academic background. Additionally, I will be sharing my personal views and experiences through blog posts, providing an insider's perspective on the latest developments in the field. I am excited to share my passion for physics and machine learning with you through this website and hope you will find it informative and engaging.</p>
-  <div class="w3-row">
-    <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i>My Name</b></p><br>
-      <img src="/images/myphoto.jpg" alt="Photo of Me" width="400" height="333"> <!--  class="w3-round w3-image w3-opacity w3-hover-opacity-off" -->
-    </div>
-
-    <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Hi, my name is Eslam Shokr, I am a Ph.D. student at the University of 
-        (UZH) where I engage in cutting-edge research at the CMS experiment. My main focus is to establish a new limit for the anomalous magnetic moment of tau using lead-lead ultra-peripheral collisions. In addition, I am committed to exploring the potential of Machine Learning techniques in uncovering new physics phenomena. This exciting project combines my passion for particle physics and my interest in the latest advances in computational methods.</p>
-    </div>
-  </div>
-  <p class="w3-large w3-center w3-padding-16">I am interested in </p>
-  <p class="w3-wide"><i class="fa fa-camera"></i>Particle physics</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
-  </div>
-  <p class="w3-wide"><i class="fa fa-laptop"></i>Coding</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
-  </div>
-  <p class="w3-wide"><i class="fa fa-photo"></i>HardWare developing</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
-  </div>
-</div>
-<!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">Here The Magic Happens</span>
-  </div>
-</div>
-  
-<div class="w3-content w3-container w3-padding-64" id="Schools">
-  <h3 class="w3-center"> Schools and Workshops</h3>
-  <p class="w3-center"><em>Here are some of my latest presentations, summers or winter schools, publications, ...etc.</em></p><br>
-  <!-- Responsive Grid. Two columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding">
-    <div class="w3-half w3-center">
-      <img src="/images/hasco.jpg" style="max-width:100%; object-fit: cover; width:300px;"  onclick="onClick(this)" class="w3-hover-opacity" alt="HASCO summer school 2022">
-      <p class="image-caption">This photo was taken at the University of Gotengin during HASCO winter school. This school offers a wide range of lectures on experimental and theoretical particle physics, as well as computational tools utilized in the field. </p>
-    </div>
-    <div class="w3-half w3-center">
-      <img src="/images/chipp.jpg" style="max-width:100%; object-fit: cover; width:230px;" onclick="onClick(this)" class="w3-hover-opacity" alt="CHIPP winter school 2023">
-      <p class="image-caption">This photo was taken at the CHIPP winter school, an esteemed gathering of young particle physicists. The school offers a unique opportunity for researchers to exchange knowledge and a diverse program of lectures and discussions. In this school, I got the opportunity to present the work that I have done at the beginning of my PhD.</p>
-    </div>
-    <div class="w3-half w3-center">
-      <img src="/images/hasco.jpg" style="max-width:100%; object-fit: cover; width:300px;"  onclick="onClick(this)" class="w3-hover-opacity" alt="HASCO summer school 2022">
-      <p class="image-caption">This photo was taken at the University of Gotengin during HASCO winter school. This school offers a wide range of lectures on experimental and theoretical particle physics, as well as computational tools utilized in the field. </p>
-    </div>
-    <div class="w3-half w3-center">
-      <img src="/images/chipp.jpg" style="max-width:100%; object-fit: cover; width:230px;" onclick="onClick(this)" class="w3-hover-opacity" alt="CHIPP winter school 2023">
-      <p class="image-caption">This photo was taken at the CHIPP winter school, an esteemed gathering of young particle physicists. The school offers a unique opportunity for researchers to exchange knowledge and a diverse program of lectures and discussions. In this school, I got the opportunity to present the work that I have done at the beginning of my PhD.</p>
-    </div>
-  </div>
-</div>
-
-  
-<!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="Publications">
-  <h3 class="w3-center">My publications</h3>
-  <p class="w3-center"><em>Here are some of my latest publications:</em></p><br>
-  <!-- Responsive Grid. Two columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding">
-    <div class="w3-half w3-center">
-      <p class="image-caption"><strong>E. Shokr</strong>, A. De Roeck and M. A. Mahmoud, "Modeling of charged-particle multiplicity and transverse-momentum distributions in pp collisions using a DNN", <em>Scientific Reports</em>, vol. 12, article no. 8684, May 2022, DOI: <a href="https://doi.org/10.1038/s41598-022-11618-6" style="color: purple;">https://doi.org/10.1038/s41598-022-11618-6</a></p>
-    </div>
-    <div class="w3-half w3-center">
-      <p class="image-caption"><strong>E. Shokr*</strong>, A. H. El-Farrash, A. De Roeck and M. A. Mahmoud, "Study of charged-particle multiplicity fluctuations in pp collisions with Monte Carlo event generators at the LHC", <em>International Journal of Modern Physics E</em>, vol. 29, no. 10, 2050074 (17 pages), October 2020, DOI: <a href="https://doi.org/10.1142/S0218301320500743" style="color: purple;">https://doi.org/10.1142/S0218301320500743</a></p>
-    </div>
-  </div>
-</div>
-
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
-  </div>
-</div>
-
-<!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
- <!--    <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>-->
-  </div>
-</div>
-<!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
-  <h3 class="w3-center">Get in Touch</h3>
-  <p class="w3-center"><em>If you would like to get in touch with me, feel free to send me a message at the following email address !</em></p>
-  <div class="w3-row w3-padding-32 w3-section">
-    <div class="w3-col m4 w3-container">
-      <img src="/images/zuirch.jpg" class="w3-image w3-round" style="width:100%">
-    </div>
-    <div class="w3-col m8 w3-panel">
-      <div class="w3-large w3-margin-bottom">
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> <a href="mailto:eslam.shokr@cern.ch">Email: eslam.shokr@cern.ch</a><br>
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Zurich, CH<br>
-      </div>
-    </div>
-  </div>
-</div> 
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xlarge w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div>
-  <!--  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p> -->
-</footer>
- 
-<script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-    }
-}
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-</script>
-
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="topbar"><nav class="nav wrap" aria-label="Main navigation"><a class="brand" href="#top">Eslam Shokr</a><div class="navlinks"><a href="#research">Research</a><a href="#experience">Experience</a><a href="#publications">Publications</a><a href="#talks">Talks</a><button class="print" type="button" onclick="window.print()">Print / Save PDF</button></div></nav></header>
+  <section class="hero" id="top"><div class="hero-grid wrap"><div><div class="eyebrow">University of Zurich · CMS Collaboration</div><h1>Eslam Shokr</h1><p class="role">Doctoral Researcher in Experimental Particle Physics</p><p class="lede">Doctoral researcher at the University of Zurich, working at the intersection of precision Standard Model measurements, searches for new physics, and silicon detector development.</p><div class="quicklinks"><a class="btn primary" href="mailto:eslam.shokr@cern.ch">eslam.shokr@cern.ch</a><a class="btn secondary" href="https://www.linkedin.com/in/eshokr">LinkedIn</a><a class="btn secondary" href="https://github.com/eshokr">GitHub</a></div></div><div class="portrait-wrap"><img class="portrait" src="photo.jpg" alt="Portrait of Eslam Shokr"><p class="caption">Zurich, Switzerland</p></div></div></section>
+  <main class="wrap" id="content">
+    <section class="section" id="research"><div class="section-head"><div class="kicker">Current focus</div><div><h2>Research interests</h2><p class="intro">My work combines precision measurements, model-agnostic searches, and hands-on detector development within the CMS experiment.</p></div></div><div class="research-grid">
+      <article class="card"><div class="card-num">01</div><h3>Tau precision physics</h3><p>Leading analysis of tau anomalous magnetic moment and γγ → ττ cross-section measurements in ultraperipheral Pb–Pb collisions. The analysis is approved as CMS PAS HIN-24-011.</p></article>
+      <article class="card"><div class="card-num">02</div><h3>BSM resonance searches</h3><p>Lead analyzer for a model-agnostic search for tri-resonant X → YY′ → bbWW decays, using combined CMS Run 2 and Run 3 data and a three-dimensional likelihood fit.</p></article>
+      <article class="card"><div class="card-num">03</div><h3>Phase-II detector R&amp;D</h3><p>Developing and testing the Tracker Endcap Pixel detector for High-Luminosity CMS, including an eight-module calibration framework and silicon-sensor characterization.</p></article>
+    </div></section>
+    <section class="section" id="experience"><div class="section-head"><div class="kicker">Career</div><div><h2>Experience &amp; education</h2></div></div><div class="timeline">
+      <article class="entry"><div class="date">Sep 2022 — Present</div><div><h3>PhD in Experimental Particle Physics · ongoing</h3><div class="place">University of Zurich · Zurich, Switzerland</div><p>Doctoral researcher in the Zurich CMS group under Prof. Dr. Ben Kilminster. Teaching assistant for undergraduate physics and laboratory courses.</p><span class="tag">CMS</span><span class="tag">Precision physics</span><span class="tag">BSM</span></div></article>
+      <article class="entry"><div class="date">Jun 2021 — Present</div><div><h3>Assistant Lecturer · on study leave</h3><div class="place">Mansoura University · Egypt</div><p>Academic appointment in the Physics Department, Faculty of Science.</p></div></article>
+      <article class="entry"><div class="date">Feb — Jul 2022</div><div><h3>Erasmus+ Research Fellowship</h3><div class="place">Sapienza University of Rome · Italy</div><p>Training in the CMS group, with graduate coursework in particle physics, detectors and accelerators, and advanced machine learning for physics.</p></div></article>
+      <article class="entry"><div class="date">May 2018 — Apr 2021</div><div><h3>MSc, Particle Physics</h3><div class="place">Mansoura University · Egypt</div><p>Thesis on charged-particle production in proton–proton collisions in the CMS experiment at the LHC.</p></div></article>
+      <article class="entry"><div class="date">Sep 2012 — Jul 2016</div><div><h3>BSc, Physics</h3><div class="place">Mansoura University · Egypt</div><p>Graduated first in the program with excellent honors (85.2%).</p></div></article>
+    </div></section>
+    <section class="section" id="publications"><div class="section-head"><div class="kicker">Selected work</div><div><h2>Publications &amp; results</h2></div></div><div class="pubs">
+      <article class="pub"><strong>CMS PAS HIN-24-011</strong> · Measurement of γγ → ττ production and constraints on the tau anomalous magnetic moment in ultraperipheral Pb–Pb collisions. <a href="https://cds.cern.ch/record/2912969/files/HIN-24-011-pas.pdf">CMS analysis note (PDF)</a></article>
+      <article class="pub"><strong>E. Shokr, A. De Roeck &amp; M. A. Mahmoud</strong> · Modeling of charged-particle multiplicity and transverse-momentum distributions in pp collisions using a DNN. <em>Scientific Reports</em>, 2022. <a href="https://www.nature.com/articles/s41598-022-11618-6">Read article</a></article>
+      <article class="pub"><strong>E. Shokr, A. H. El-Farrash, A. De Roeck &amp; M. A. Mahmoud</strong> · Study of charged-particle multiplicity fluctuations in pp collisions with Monte Carlo event generators at the LHC. <em>IJMPE</em>, 2020. <a href="https://doi.org/10.1142/S0218301320500743">Publisher · DOI</a></article>
+    </div></section>
+    <section class="section" id="talks"><div class="section-head"><div class="kicker">Communication</div><div><h2>Selected talks &amp; posters</h2></div></div><div class="talks">
+      <article class="talk"><time>Oct 2025</time><h3><a href="https://indico.cern.ch/event/1466941/overview">Limits on the tau anomalous magnetic moment in CMS</a></h3><p>Plenary talk · TAU 2025 · Marseille · Conference page</p></article>
+      <article class="talk"><time>18 Aug 2025</time><h3><a href="https://oepg-sps-meetingvienna2025.univie.ac.at/">Exclusive dimuon photoproduction in ultraperipheral Pb–Pb collisions</a></h3><p>Joint Annual Meeting of ÖPG and SPS · Vienna · Conference page</p></article>
+      <article class="talk"><time>6 Apr 2025</time><h3><a href="https://indico.cern.ch/event/1334113/">Measurement of the tau g−2 factor in ultraperipheral Pb–Pb collisions</a></h3><p>Poster · Quark Matter 2025 · Frankfurt · Conference page</p></article>
+      <article class="talk"><time>18 Nov 2024</time><h3><a href="https://indico.cern.ch/event/1474681/contributions/6219636/attachments/2967637/5221751/EShokr_LHCC_poster.pdf">Measurement of the tau g−2 factor with CMS</a></h3><p>LHC students poster session · LHCC · CERN · Poster PDF</p></article>
+    </div></section>
+    <section class="section"><div class="section-head"><div class="kicker">Toolkit</div><div><h2>Technical skills</h2></div></div><div class="skills">
+      <div class="skill"><h3>Programming</h3><p>Python, C++, Bash, CMake, Linux</p></div><div class="skill"><h3>Physics &amp; analysis</h3><p>ROOT, CMSSW, Combine, PYTHIA, HERWIG, UPCgen, STARlight, Geant4</p></div><div class="skill"><h3>Languages</h3><p>Arabic (native), English, German (A1)</p></div>
+    </div></section>
+    <section class="contact"><div><h2>Contact</h2><p>Based at the Physics Department, University of Zurich.</p></div><div class="socials"><a href="mailto:eslam.shokr@cern.ch">Email</a><a href="https://www.linkedin.com/in/eshokr">LinkedIn</a><a href="https://github.com/eshokr">GitHub</a></div></section>
+  </main>
+  <footer class="wrap">© <span id="year"></span> Eslam Shokr · Experimental Particle Physics</footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
