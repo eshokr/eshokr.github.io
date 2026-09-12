@@ -78,6 +78,11 @@ a{text-decoration:underline}
 @media(max-width:480px){.hero-grid{grid-template-columns:minmax(0,1fr) 96px;gap:18px;align-items:start}.hero .portrait-wrap{grid-column:2;grid-row:1}.hero .portrait{width:96px;height:120px}.hero h1{font-size:2.5rem}.hero .role{font-size:1rem}.hero .eyebrow{font-size:.75rem}.hero .lede,.hero .quicklinks{margin-right:-114px}.hero .lede{margin-top:18px}.collision-display{bottom:0;width:130%;left:-15%}}
 }
 @media print{.collision-display{display:none}}
+
+@media screen{
+.collision-display a{position:relative}
+.collision-display a::after{content:"";position:absolute;inset:0;pointer-events:none;background:url("assets/cms-event-display.svg") center/100% 100% no-repeat;filter:brightness(2.2);clip-path:inset(17% 0 0 0);-webkit-mask-image:radial-gradient(ellipse 28% 37% at 87% 29%,#000 12%,transparent 100%);mask-image:radial-gradient(ellipse 28% 37% at 87% 29%,#000 12%,transparent 100%)}
+}
 </style>
 </head>
 <body>
