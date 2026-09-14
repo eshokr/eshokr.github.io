@@ -140,5 +140,117 @@ a{text-decoration:underline}
   </main>
   <footer class="wrap">© <span id="year"></span> Eslam Shokr · Experimental Particle Physics</footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script>
+// Build actual A4 pages with ordinary HTML footers, including in Safari.
+(() => {
+  const rootId = 'cv-print-pages';
+  function preparePrint() {
+    document.body.classList.remove('cv-paginated');
+    document.getElementById(rootId)?.remove();
+    document.getElementById('cv-print-layout')?.remove();
+    const styles = [];
+    function collect(rules) {
+      for (const rule of rules) {
+        if (rule.type === CSSRule.MEDIA_RULE && rule.conditionText === 'print') {
+          for (const item of rule.cssRules) {
+            if (item.type !== CSSRule.STYLE_RULE) continue;
+            const selector = item.selectorText.split(',').map(s => {
+              s = s.trim();
+              return s === 'body' ? '#' + rootId : '#' + rootId + ' ' + s;
+            }).join(',');
+            styles.push(selector + '{' + item.style.cssText + '}');
+          }
+        }
+      }
+    }
+    for (const sheet of document.styleSheets) {
+      try { collect(sheet.cssRules); } catch (_) { /* External styles are optional. */ }
+    }
+    const layout = document.createElement('style');
+    layout.id = 'cv-print-layout';
+    layout.textContent = styles.join('\n') + `
+      #${rootId}{position:absolute;left:-10000px;top:0;width:182mm;background:white;color:#172c40;}
+      #${rootId} .cv-sheet{position:relative;width:182mm;height:272mm;box-sizing:border-box;break-after:page;page-break-after:always;}
+      #${rootId} .cv-sheet:last-child{break-after:auto;page-break-after:auto;}
+      #${rootId} .cv-sheet-content{display:flow-root;height:258mm;}
+      #${rootId} .cv-sheet-footer{display:block!important;position:absolute;bottom:1mm;left:0;right:0;margin:0;padding:3mm 0 0;border-top:1px solid #dce3e9;text-align:center;font:9pt/1.3 Arial,sans-serif;color:#526477;}
+      #${rootId} .wrap{width:100%;margin:0;}
+      #${rootId} #education{break-before:auto;page-break-before:auto;}
+      #${rootId} .section{scroll-margin-top:0;}
+      @media print{
+        @page{size:A4;margin:12mm 14mm;@bottom-center{content:none}}
+        body.cv-paginated{margin:0!important;}
+        body.cv-paginated > :not(#${rootId}):not(style):not(script){display:none!important;}
+        body.cv-paginated #${rootId}{position:static;left:auto;top:auto;display:block;}
+      }`;
+    document.head.append(layout);
+    const root = document.createElement('div');
+    root.id = rootId;
+    root.setAttribute('aria-hidden', 'true');
+    document.body.append(root);
+    let content;
+    function newPage() {
+      const page = document.createElement('div');
+      page.className = 'cv-sheet';
+      content = document.createElement('div');
+      content.className = 'cv-sheet-content';
+      page.append(content);
+      root.append(page);
+    }
+    function overflow() { return content.scrollHeight > content.clientHeight + 1; }
+    function addBlock(node) {
+      const clone = node.cloneNode(true);
+      content.append(clone);
+      if (overflow() && content.children.length > 1) {
+        clone.remove(); newPage(); content.append(clone);
+      }
+    }
+    newPage();
+    const hero = document.querySelector('body > .hero');
+    if (hero) addBlock(hero);
+    for (const section of document.querySelectorAll('body > main > section')) {
+      if (section.id === 'education' && content.children.length) newPage();
+      const full = section.cloneNode(true);
+      content.append(full);
+      if (getComputedStyle(full).display === 'none' || !overflow()) continue;
+      full.remove();
+      const groups = [...section.children].filter(n => !n.classList.contains('section-head'));
+      if (groups.length !== 1 || !groups[0].children.length) { addBlock(section); continue; }
+      let shell, group;
+      function startSection() {
+        shell = section.cloneNode(false);
+        const heading = section.querySelector(':scope > .section-head');
+        if (heading) shell.append(heading.cloneNode(true));
+        group = groups[0].cloneNode(false);
+        shell.append(group); content.append(shell);
+      }
+      startSection();
+      for (const child of groups[0].children) {
+        const item = child.cloneNode(true);
+        group.append(item);
+        if (overflow()) {
+          item.remove();
+          if (!group.children.length) shell.remove();
+          newPage(); startSection(); group.append(item);
+        }
+      }
+    }
+    const pages = [...root.children];
+    pages.forEach((page, index) => {
+      const footer = document.createElement('div');
+      footer.className = 'cv-sheet-footer';
+      footer.textContent = 'Eslam Shokr · Page ' + (index + 1) + ' of ' + pages.length;
+      page.append(footer);
+    });
+    document.body.classList.add('cv-paginated');
+  }
+  window.addEventListener('beforeprint', preparePrint);
+  window.addEventListener('afterprint', () => {
+    document.body.classList.remove('cv-paginated');
+    document.getElementById(rootId)?.remove();
+    document.getElementById('cv-print-layout')?.remove();
+  });
+})();
+</script>
 </body>
 </html>
