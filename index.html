@@ -208,8 +208,8 @@ a{text-decoration:underline}
   cv.id = 'cv-print';
   cv.setAttribute('aria-hidden', 'true');
   const groups = [
-    ['.hero', '#research', '#experience', '#academic-service', '#education'],
-    ['#skills', '#supervision', '#publications', '#talks', '#references']
+    ['.hero', '#research', '#skills', '#experience', '#education'],
+    ['#supervision', '#publications', '#talks', '#academic-service', '#references']
   ];
   groups.forEach((selectors, index) => {
     const page = document.createElement('div');
