@@ -199,7 +199,7 @@ a{text-decoration:underline}
 </div></section>
 <section class="contact"><div><h2>Contact</h2><p>Based at the Physics Department, University of Zurich.</p></div><div class="socials"><a href="mailto:eslam.shokr@cern.ch">Email</a><a href="https://www.linkedin.com/in/eshokr">LinkedIn</a><a href="https://github.com/eshokr">GitHub</a></div></section>
 </main>
-<footer class="wrap">© <span id="year"></span> Eslam Shokr · Experimental Particle Physics</footer>
+<footer class="wrap">© <span id="year"></span> Eslam Shokr · Experimental Particle Physics<details style="margin-top:8px"><summary>Visitor notifications</summary><p>This site sends its owner an email with the page address and visit time via EmailJS and Gmail. No name or email address is requested from visitors, and URL query parameters are excluded. Your browser connects to EmailJS to send the alert. A temporary timestamp in this tab limits repeat alerts. Do Not Track and Global Privacy Control signals are respected.</p></details></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 <script>
 // A stable, print-only two-page CV. Avoid measuring screen styles during beforeprint.
@@ -233,6 +233,50 @@ a{text-decoration:underline}
     cv.append(page);
   });
   document.body.append(cv);
+})();
+</script>
+
+<script id="visitor-alerts">
+(() => {
+  'use strict';
+  const allowedHosts = ['eshokr.github.io', 'eslam-shokr-cv.eslam-940725.chatgpt.site'];
+  if (!allowedHosts.includes(location.hostname) ||
+      navigator.doNotTrack === '1' || navigator.globalPrivacyControl === true) return;
+  const key = 'eshokr:last-visit-alert';
+  let attempted = false;
+  async function notifyVisit() {
+    if (attempted || document.visibilityState !== 'visible') return;
+    const now = Date.now();
+    try {
+      const previous = Number(sessionStorage.getItem(key));
+      if (previous > 0 && now - previous < 30 * 60 * 1000) return;
+    } catch (_) {}
+    attempted = true;
+    try {
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'omit',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify({
+          service_id: 'service_udri2yp',
+          template_id: 'template_f0uhrif',
+          user_id: 'WxK1iqL3tQWH_Kp5l',
+          template_params: {
+            page_url: location.origin + location.pathname,
+            visit_time: new Date(now).toLocaleString('en-GB', { timeZone: 'Europe/Zurich' }) + ' (Europe/Zurich)'
+          }
+        })
+      });
+      if (!response.ok) throw new Error('Email service rejected the alert');
+      try { sessionStorage.setItem(key, String(now)); } catch (_) {}
+    } catch (_) {
+      // Email failures must never interrupt reading or printing the CV.
+      console.warn('Visitor notification could not be sent.');
+    }
+  }
+  setTimeout(notifyVisit, 3000);
+  document.addEventListener('visibilitychange', notifyVisit);
 })();
 </script>
 </body>
